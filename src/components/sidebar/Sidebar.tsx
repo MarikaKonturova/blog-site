@@ -1,12 +1,12 @@
 import React from 'react';
 import './sidebar.css';
-import AboutMe from '../assets/images/aboutMe.jpg'
+import AboutMe from '../../assets/images/aboutMe.jpg'
 
 export function Sidebar() {
     return (<div className={'sidebar'}>
             <div className="sidebarItem">
                 <span className="sidebarTitle">ABOUT ME</span>
-                <img className={'sidebarImg'}
+                <img
                     src={AboutMe}
                      alt='aboutMe'
                 />

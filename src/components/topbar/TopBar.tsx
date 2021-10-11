@@ -1,6 +1,6 @@
 import React from 'react';
 import './topbar.css'
-import topbarImg from '../assets/images/topbarImg.jpg'
+import topbarImg from '../../assets/images/topbarImg.jpg'
 export function TopBar() {
     return (
         <div className={'top'} >

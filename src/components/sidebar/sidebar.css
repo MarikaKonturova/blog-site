@@ -30,6 +30,32 @@
 
 }
 
-.sidebarImg {
+.sidebarItem > img {
+    margin-top: 15px;
     width: 100%;
+}
+.sidebarItem > p  {
+    padding: 30px
+}
+.sidebarList {
+    list-style: none;
+    margin-bottom: 30px;
+}
+.sidebarListItem {
+    display: inline-block;
+    width: 50%;
+    margin-top: 15px;
+    cursor: pointer;
+}
+.sidebarSocial {
+    margin-top: 15px;
+    width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sidebarIcon{
+    font-size: 16px;
+    margin-left: 10px;
+    cursor: pointer;
 }

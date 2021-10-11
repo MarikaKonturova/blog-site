@@ -1,6 +1,6 @@
 import React from 'react';
 import './header.css';
-import large from '../assets/images/large.jpg'
+import large from '../../assets/images/large.jpg'
 
 export function Header() {
     return (<div className={'header'}>
