@@ -8,8 +8,8 @@ export function Write() {
             src={userPostTemp}/>
             <form className="writeForm">
                 <div className="writeFormGroup">
-                    <label htmlFor="{'fileInput'}"><i className="writeIcon fas fa-plus"/></label>
-                    <input type={'file'} id={'fileInput'}style={{display:"none"}}/>
+                    <label htmlFor='fileInput'><i className="writeIcon fas fa-plus"/></label>
+                    <input type={'file'} id={'fileInput'} style={{display:"none"}}/>
                     <input type={'text'} placeholder={'Title'} id={'textInput'} className={'writeInput'} autoFocus/>
                 </div>
                 <div className="writeFormGroup">

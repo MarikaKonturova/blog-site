@@ -1,18 +1,20 @@
 import React from 'react';
 import './post.css'
 import postImg from '../../../assets/images/post_templ.jpg'
+import { Link } from 'react-router-dom';
 export function Post() {
     return (<div className={'post'}>
-            <img
-            className={'postImg'}
-            src={postImg}
-            alt={'postImg'}/>
+            <Link to={'/post/:postid'}><img
+                className={'postImg'}
+                src={postImg}
+                alt={'postImg'}/></Link>
 <div className="postInfo">
     <div className="postCats">
         <span className="postCat">Music</span>
         <span className="postCat">Life</span>
     </div>
-    <span className="postTitle">Lorem ipsum dolor sit amet</span>
+    <Link to={'/post/:postid'} className={'link'}>
+     <span className="postTitle">Lorem ipsum dolor sit amet</span></Link>
     <hr/>
     <span className="postDate">1 hour ago</span>
 </div>

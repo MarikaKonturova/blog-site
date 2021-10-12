@@ -6,21 +6,18 @@ import {Write} from "./pages/write/Write";
 import {Settings} from "./pages/settings/Settings";
 import {Login} from "./pages/login/Login";
 import {Register} from "./pages/register/Register";
-import {HashRouter, Route, Switch} from "react-router-dom";
+import {HashRouter, Redirect, Route, Switch} from "react-router-dom";
 
 function App() {
-    const user = false
-
+    const user = true
     return (<HashRouter>
-            <TopBar/>
+            <TopBar />
             <Switch>
                 <Route exact path={'/'} render={() => <Home/>}/>
-                <Route path={'/register'}>
-                    {user? <Home/> : <Register/>}
-                </Route>
-                <Route path={'/login'} render={() => <Login/>}/>
-                <Route path={'/settings'} render={() => <Settings/>}/>
-                <Route path={'/write'} render={() => <Write/>}/>
+                <Route path={'/register'}>{user? <Redirect to={'/'}/> : <Register/>}</Route>
+                <Route path={'/login'}>{user? <Redirect to={'/'}/> : <Login/>}</Route>
+                <Route path={'/write'}>{!user? <Redirect to={'/login'}/> : <Write/>}</Route>
+                <Route path={'/settings'}>{!user? <Redirect to={'/login'}/> : <Settings/>}                </Route>
                 <Route path={'/post/:postid'} render={() => <Single/>}/>
             </Switch>
         </HashRouter>
