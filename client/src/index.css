@@ -1,0 +1,9 @@
+* {
+    margin: 0;
+    padding: 0
+}
+
+.link, .activeClass {
+    text-decoration: none;
+    color: inherit;
+}
