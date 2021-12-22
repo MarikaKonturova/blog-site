@@ -1,10 +1,16 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import './topbar.css'
 import topbarImg from '../../assets/images/topbarImg.jpg'
 import {NavLink} from 'react-router-dom';
+import {Context} from "../../context/Context";
 
 export function TopBar() {
-const user = true
+    const {state, dispatch} = useContext(Context)
+    const {user} = state
+    const PF = 'http://localhost:3000/images/'
+    const handleLogout = () => {
+        dispatch({type: "LOGOUT"})
+    }
     return (
         <div className={'top'}>
             <div className={'topLeft'}>
@@ -29,24 +35,28 @@ const user = true
                     </div>
                     }
                     {user &&
-                    <div className="topListItem">
-                        <NavLink to='/login' activeClassName={'activeClass'} className={'link'}>LOGOUT</NavLink>
+                    <div className="topListItem" onClick={handleLogout}
+                    >
+                        {user && "LOGOUT"}
                     </div>
                     }
                 </div>
             </div>
             <div className={'topRight'}>
-                {user ?
-                    <img className={'topImg'} src={topbarImg} alt={'positive image'}/>
+                {user ? <NavLink to={'/settings'}>
+                        <img className={'topImg'} src={user ? PF + user.profilePic : topbarImg} alt={'user avatar'}/>
+                    </NavLink>
+
                     : (<div className={'topList'}>
-                            <div className="topListItem">
-                                <NavLink to='/login' activeClassName={'activeClass'} className={'link'}>LOGIN</NavLink>
-                            </div>
-                            <div className="topListItem">
-                                <NavLink to='/register' activeClassName={'activeClass'} className={'link'}>REGISTER</NavLink>
-                            </div>
+                        <div className="topListItem">
+                            <NavLink to='/login' activeClassName={'activeClass'} className={'link'}>LOGIN</NavLink>
                         </div>
-                    )
+                        <div className="topListItem">
+                            <NavLink to='/register' activeClassName={'activeClass'}
+                                     className={'link'}>REGISTER</NavLink>
+                        </div>
+                    </div>)
+
                 } <i className=" topSearchIcon fas fa-search"/>
             </div>
         </div>

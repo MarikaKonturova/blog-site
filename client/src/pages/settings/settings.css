@@ -12,6 +12,7 @@
     justify-content: space-between;
 }
 .settingsUpdateTitle{
+    margin-top: 18px;
     font-size: 20px;
     margin-bottom: 20px ;
     color: mediumpurple;

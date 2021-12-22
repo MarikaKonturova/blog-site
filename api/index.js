@@ -6,10 +6,14 @@ const authRoute = require('./routes/auth')
 const userRout = require('./routes/users')
 const postRout = require('./routes/posts')
 const categoryRout = require('./routes/categories')
+const path = require('path')
 const multer = require('multer')
 
 dotenv.config();
 app.use(express.json());
+//with this we can see images after uploading them
+app.use('/images', express.static(path.join(__dirname, '/images')))
+
 mongoose.connect(process.env.MONGO_URL,
     {
         useNewUrlParser: true,

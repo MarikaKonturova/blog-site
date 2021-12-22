@@ -1,15 +1,16 @@
 import React from 'react';
 import './post.css'
-import postImg from '../../../assets/images/post_templ.jpg'
 import {Link} from 'react-router-dom';
 import {postType} from "../../../types/typpes";
 
 export function Post(post: postType) {
+    //public folder
+    const PF = 'http://localhost:3000/images/'
     return (<div className={'post'}>
             {post.photo && <Link to={`/post/${post._id}`}>
                 <img
                     className={'postImg'}
-                    src={post.photo}
+                    src={PF + post.photo}
                     alt={'postImg'}/>
             </Link>}
             <div className="postInfo">
